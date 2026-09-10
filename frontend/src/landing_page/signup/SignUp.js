@@ -18,7 +18,7 @@ const SignUp = () => {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:3002/signup", {
+      const response = await fetch("https://trade-nest-mswy.onrender.com/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
