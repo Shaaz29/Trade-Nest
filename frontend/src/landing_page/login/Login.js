@@ -38,7 +38,7 @@ const Login = () => {
           JSON.stringify(data.user)
         );
           window.location.href =
-          "http://localhost:3001/?token=" +
+          "https://trade-nest-dashboard.onrender.com/?token=" +
           encodeURIComponent(data.token) +
           "&user=" +
           encodeURIComponent(JSON.stringify(data.user));

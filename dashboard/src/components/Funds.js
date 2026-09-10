@@ -11,7 +11,7 @@ const Funds = () => {
   const fetchFunds = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3002/funds",
+        "https://trade-nest-mswy.onrender.com/funds",
         {
           headers: {
             Authorization:
@@ -39,7 +39,7 @@ const Funds = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3002/addFunds",
+        "https://trade-nest-mswy.onrender.com/addFunds",
         {
           amount: Number(amount),
         },
@@ -81,7 +81,7 @@ const Funds = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3002/withdrawFunds",
+        "https://trade-nest-mswy.onrender.com/withdrawFunds",
         {
           amount: Number(amount),
         },

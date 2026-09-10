@@ -27,7 +27,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3002/signup",
+        "https://trade-nest-mswy.onrender.com/signup",
         formData
       );
 

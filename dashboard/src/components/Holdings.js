@@ -13,7 +13,7 @@ const Holdings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allHoldings", {
+      .get("https://trade-nest-mswy.onrender.com/allHoldings", {
         headers: {
           Authorization:
             "Bearer " + localStorage.getItem("token"),

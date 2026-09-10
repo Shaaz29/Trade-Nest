@@ -13,7 +13,7 @@ const Apps = () => {
   useEffect(() => {
     const fetchStocks = async () => {
       try {
-        const response = await axios.get("http://localhost:3002/stocks");
+        const response = await axios.get("https://trade-nest-mswy.onrender.com/stocks");
 
         setStocks(response.data);
       } catch (err) {
@@ -41,7 +41,7 @@ const Apps = () => {
         : `${stockSymbol}.BSE`;
 
       const response = await axios.get(
-        `http://localhost:3002/stock/${apiSymbol}`
+        `https://trade-nest-mswy.onrender.com/stock/${apiSymbol}`
       );
 
       setStockData(response.data);

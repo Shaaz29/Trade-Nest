@@ -30,7 +30,7 @@ const BuyActionWindow = ({ uid, mode }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3002/newOrder",
+        "https://trade-nest-mswy.onrender.com/newOrder",
         {
           name: uid,
           qty: quantity,

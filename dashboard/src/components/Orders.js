@@ -9,7 +9,7 @@ const Orders = () => {
 
 useEffect(() => {
   axios
-    .get("http://localhost:3002/allOrders", {
+    .get("https://trade-nest-mswy.onrender.com/allOrders", {
       headers: {
         Authorization:
           "Bearer " + localStorage.getItem("token"),
