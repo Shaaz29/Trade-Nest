@@ -718,7 +718,7 @@ app.get("/stock/:symbol", async (req, res) => {
   try {
     const { symbol } = req.params;
 
-    const stock = await Stock.findOne({ apiSymbol: symbol });
+    const stock = await StockModel.findOne({ apiSymbol: symbol });
 
     if (!stock) {
       return res.status(404).json({
