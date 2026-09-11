@@ -727,6 +727,7 @@ app.get("/stock/:symbol", async (req, res) => {
       },
     });
 
+    console.log("Alpha Vantage raw response:", response.data);
     const quote = response.data["Global Quote"];
 
     if (!quote || !quote["05. price"]) {
