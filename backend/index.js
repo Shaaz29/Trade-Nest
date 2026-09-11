@@ -700,7 +700,6 @@ app.post("/withdrawFunds", authMiddleware, async (req, res) => {
   }
 });
 
-
 app.get("/stocks", async (req, res) => {
   try {
     const stocks = await StockModel.find().sort({ name: 1 });
@@ -719,6 +718,13 @@ app.get("/stock/:symbol", async (req, res) => {
   try {
     const { symbol } = req.params;
 
+    const stock = await Stock.findOne({ apiSymbol: symbol });
+
+    if (!stock) {
+      return res.status(404).json({
+        message: "Stock not found",
+      });
+    }
     const response = await axios.get("https://www.alphavantage.co/query", {
       params: {
         function: "GLOBAL_QUOTE",
@@ -727,12 +733,14 @@ app.get("/stock/:symbol", async (req, res) => {
       },
     });
 
-    console.log("Alpha Vantage raw response:", response.data);
     const quote = response.data["Global Quote"];
 
     if (!quote || !quote["05. price"]) {
-      return res.status(404).json({
-        message: "Stock data not found",
+      return res.json({
+        symbol: stock.apiSymbol,
+        price: stock.price,
+        changePercent: stock.percent,
+        isDown: stock.isDown,
       });
     }
 
