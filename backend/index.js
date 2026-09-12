@@ -738,9 +738,15 @@ app.get("/stock/:symbol", async (req, res) => {
     if (!quote || !quote["05. price"]) {
       return res.json({
         symbol: stock.apiSymbol,
-        price: stock.price,
-        changePercent: stock.percent,
-        isDown: stock.isDown,
+        price: Number(stock.price),
+        change: 0,
+        changePercent: Number(String(stock.percent).replace("%", "")),
+        open: Number(stock.price),
+        high: Number(stock.price),
+        low: Number(stock.price),
+        volume: 0,
+        latestTradingDay: "N/A",
+        previousClose: Number(stock.price),
       });
     }
 
