@@ -43,7 +43,7 @@ const Menu = () => {
 
   setIsProfileDropdownOpen(false);
 
-  window.location.href = "https://trade-nest-frontend-peod.onrender.com/login";
+  window.location.href = "https://trade-nest-frontend-peod.onrender.com";
 };
 
   const menuClass = "menu";
